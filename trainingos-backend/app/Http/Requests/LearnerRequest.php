@@ -1,0 +1,4 @@
+<?php
+namespace App\Http\Requests;
+use Illuminate\Foundation\Http\FormRequest;
+class LearnerRequest extends FormRequest { public function authorize():bool{return true;} public function rules():array{return ['first_name'=>'required|string|max:100','last_name'=>'nullable|string|max:100','email'=>'nullable|email','phone'=>'nullable|string|max:40','date_of_birth'=>'nullable|date','gender'=>'nullable|string|max:30','company'=>'nullable|string|max:160','job_title'=>'nullable|string|max:160','address'=>'nullable|string|max:255','city'=>'nullable|string|max:100','country'=>'nullable|string|max:100','emergency_contact_name'=>'nullable|string|max:120','emergency_contact_phone'=>'nullable|string|max:40','emergency_contact_relationship'=>'nullable|string|max:80','status'=>'nullable|in:active,inactive','notes'=>'nullable|string'];} }

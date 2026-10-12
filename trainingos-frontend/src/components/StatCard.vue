@@ -1,0 +1,2 @@
+<template><div class="stat-card"><div><div class="stat-label">{{ label }}</div><div class="stat-value">{{ value }}</div><div v-if="change" class="stat-change" :class="positive ? 'positive':'negative'"><span>{{ positive ? '↗':'↘' }}</span>{{ change }}</div></div><div class="stat-icon" :class="accent"><slot name="icon">{{ icon }}</slot></div></div></template>
+<script setup lang="ts">withDefaults(defineProps<{label:string;value:string|number;change?:string;positive?:boolean;icon?:string;accent?:string}>(),{positive:true,icon:'•',accent:'blue'})</script>

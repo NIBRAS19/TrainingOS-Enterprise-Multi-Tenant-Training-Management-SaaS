@@ -1,0 +1,4 @@
+<?php
+namespace App\Http\Requests;
+use Illuminate\Foundation\Http\FormRequest;
+class AssessmentRequest extends FormRequest { public function authorize():bool{return true;} public function rules():array{return ['course_id'=>'required|integer|exists:courses,id','batch_id'=>'nullable|integer|exists:batches,id','title'=>'required|string|max:180','type'=>'required|in:quiz,exam,assignment,practical,final','date'=>'nullable|date','maximum_score'=>'required|numeric|min:0.01','pass_percentage'=>'required|numeric|min:0|max:100','status'=>'nullable|in:draft,published,completed','instructions'=>'nullable|string','questions'=>'nullable|array','questions.*.question'=>'required_with:questions|string','questions.*.type'=>'nullable|string','questions.*.options'=>'nullable|array','questions.*.correct_answer'=>'nullable|string','questions.*.points'=>'nullable|numeric|min:0','questions.*.sort_order'=>'nullable|integer|min:0'];} }

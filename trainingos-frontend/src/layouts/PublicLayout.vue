@@ -1,0 +1,1 @@
+<template><div class="public-shell"><header class="public-header"><AppLogo/><div><RouterLink to="/auth/login" class="btn ghost">Sign in</RouterLink><RouterLink to="/auth/register" class="btn primary">Start free</RouterLink></div></header><main><RouterView/></main></div></template><script setup lang="ts">import AppLogo from '../components/AppLogo.vue'</script>
